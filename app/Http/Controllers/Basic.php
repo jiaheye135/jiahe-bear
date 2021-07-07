@@ -13,8 +13,7 @@ class Basic
             $this->view = $basicVar['webType'] . '.' . $this->routeName;
         }
 
-        // $basicVar['public'] = asset('/');
-        $basicVar['public'] = asset('jiahe-bear/public'); // EC2
+        $basicVar['public'] = asset('/');
 
         /**
          * $basicVar

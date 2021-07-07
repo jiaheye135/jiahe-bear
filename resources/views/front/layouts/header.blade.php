@@ -313,7 +313,8 @@
         position: absolute;
         width: 250px;
         height: 70px;
-        background: url(/basic/logo/original/logo.png) no-repeat;
+        /* background: url(/basic/logo/original/logo.png) no-repeat; */
+        background: url(jiahe-bear/public/basic/logo/original/logo.png) no-repeat;
         left: 50%;
         margin: 0;
         margin-left: -125px;
