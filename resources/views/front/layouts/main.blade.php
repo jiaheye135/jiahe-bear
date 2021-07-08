@@ -13,97 +13,14 @@
         <title>{{ $basicVar['webName'] }}</title>
     </head>
     <body>
-        @include($basicVar['webType'] . '.layouts.header')
+        @include($basicVar['webType'] . '.layouts.mobileMenu')
 
+        <div class="main-body">
+            @include($basicVar['webType'] . '.layouts.header')
 
-        <!-- 暫時墊高-->
-        <div style="width: 100%; height: 126px;"></div>
-
-        <div class="menu-mobile">
-            <div>
-                <ul class="menu-block-mobile">
-                    <li class="menu-item-mobile">
-                        <a href="">
-                            <div class="border-style-mobile"></div>
-                            <div class="li-text-mobile">關於本站</div>
-                        </a>
-                        
-                        <ul class="sub-menu-block-mobile">
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單1</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單2</a>
-                            </il>
-                        </ul>
-                    </il>
-                    <li class="menu-item-mobile">
-                        <a href="">
-                            <div class="border-style-mobile"></div>
-                            <div class="li-text-mobile">測試選單2</div>
-                        </a>
-                        
-                        <ul class="sub-menu-block-mobile">
-                            <li class="sub-menu-item-mobile">
-                                <a href="">測試子選單1</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單2</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單3</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單4</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">測試子選單5</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單6</a>
-                            </il>
-                        </ul>
-                    </il>
-                    <li class="menu-item-mobile">
-                        <a href="">
-                            <div class="border-style-mobile"></div>
-                            <div class="li-text-mobile">測試選單3</div>
-                        </a>
-                        
-                        <ul class="sub-menu-block-mobile">
-                            <li class="sub-menu-item-mobile">
-                                <a href="">測試子選單1</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單2</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單3</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單4</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">測試子選單5</a>
-                            </il>
-                            <li class="sub-menu-item-mobile">
-                                <a href="">子選單6</a>
-                            </il>
-                        </ul>
-                    </il>
-                    <li class="menu-item-mobile">
-                        <a href="">
-                            <div class="border-style-mobile"></div>
-                            <div class="li-text-mobile">測試選單4</div>
-                        </a>
-                        
-                    </il>
-                </ul>
+            <div class="main-content">
+                @yield('content')
             </div>
-        </div>
-
-        <div class="main-content">
-            @yield('content')
         </div>
         
         <!-- Jquery -->

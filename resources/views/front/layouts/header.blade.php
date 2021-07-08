@@ -93,40 +93,77 @@
 </div>
 
 <style>
-    .menu-block-mobile {
-        padding: 32px;    
+    html, body {
+        height: 100%;
     }
 
-    ul.menu-block-mobile > li > a {
-        padding: 6px 0;
-        color: firebrick;
+    .menu-mobile {
+        position: absolute;
+        background-color: #1e0b00;
+        border-top: 5px solid #adadad;
+        width: 11em;
+        height: 100%;
+        left: -11em;
+        transition: all .4s cubic-bezier(0,.4,.4,1);
+        -ms-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -moz-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -webkit-transition: all .4s cubic-bezier(0,.4,.4,1);
+
+        /* left: 0%; */
+    }
+
+    ul.menu-block-mobile {
+        margin-top: 20px;    
+    }
+
+    ul.menu-block-mobile > li:first-child {
+        border-top: 1px solid #7B7B7B;
+    }
+
+    ul.menu-block-mobile > li {
+        white-space: nowrap;
+        border-bottom: 1px solid #7B7B7B;
+        text-align: center;
+    }
+
+    .li-fst-text-mobile {
+        color: white;
         font-weight: bolder;
         font-size: 18px;
-        text-align: center;
-        position: relative;
-        white-space: nowrap;
+        padding: 4px 0;
+        transition: all .4s cubic-bezier(0,.4,.4,1);
+        -ms-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -moz-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -webkit-transition: all .4s cubic-bezier(0,.4,.4,1);
+    }
+
+    li.mobile-menu-open > a > div.li-fst-text-mobile{
+        color: yellow;
+        background-color: darkred;
+    }
+
+    ul.sub-menu-block-mobile > li:last-child {
+        border-bottom: none;
+    }
+
+    .sub-menu-block-mobile {
+        background-color: aliceblue;
+        margin: 0px;
+        padding: 0 10px;
+        overflow: hidden;
+        transition: all .4s cubic-bezier(0,.4,.4,1);
+        -ms-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -moz-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -webkit-transition: all .4s cubic-bezier(0,.4,.4,1);
+    }
+
+    ul.sub-menu-block-mobile > li {
+        border-bottom: 1px solid #7B7B7B;
     }
 
     ul.menu-block-mobile > li > a > div.border-style-mobile {
-        height: 37px;
-        border-left: 7px double darkcyan;
-        border-right: 7px double darkcyan;
-
-        -webkit-animation-name: breathe-mobile;
-        -webkit-animation-duration: 400ms;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-direction: alternate;
-    }
-
-    @-webkit-keyframes breathe-mobile {
-        0% {
-            opacity: .1;
-        }
-
-        100% {
-            opacity: 1;
-            border-left: 7px double rgba(0, 139, 139, 1);
-        }
+        /* border-left: 7px double darkcyan; */
+        /* border-right: 7px double darkcyan; */
     }
 
     ul.sub-menu-block-mobile > li > a {
@@ -136,30 +173,13 @@
         color: cornflowerblue;
     }
 
-    .li-text-mobile {
-        margin-top: -30px;
-    }
-
-    .sub-menu-block-mobile {
-        background-color: aliceblue;
-        margin-top: 2px;
-    }
-
-    .menu-mobile {
-        background-color: aliceblue;
-        border: 8px solid #b73233;
-        width: 25%;
-        height: 100%;
+    .main-body {
         position: absolute;
-        left: -25%;
-        -webkit-transition: all .4s;
-
-        /* left: 0%;
-        box-shadow: 0 0 5px #00BFFF, 0 0 25px #00BFFF, 0 0 50px #00BFFF; */
-    }
-
-    html, body {
-        height: 100%;
+        left: 0;
+        transition: all .4s cubic-bezier(0,.4,.4,1);
+        -ms-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -moz-transition: all .4s cubic-bezier(0,.4,.4,1);
+        -webkit-transition: all .4s cubic-bezier(0,.4,.4,1);
     }
 
     .main-content {
@@ -281,7 +301,7 @@
     .sub-menu-block { left: 0%; width: 98%; }
 
     .top-header .menu-bar ul.menu-block > li:hover > a {
-        color: white;
+        color: darkorange;
         font-weight: bolder;
     }
 
@@ -383,7 +403,7 @@
         height: 65px;
         line-height: 75px;
         width: 200px;
-        color: darkorange;
+        color: white;
         font-weight: bolder;
         font-size: 18px;
         letter-spacing: 2px;
