@@ -102,7 +102,6 @@
         background-color: #1e0b00;
         border-top: 5px solid #adadad;
         width: 11em;
-        height: 100%;
         left: -11em;
         transition: all .4s cubic-bezier(0,.4,.4,1);
         -ms-transition: all .4s cubic-bezier(0,.4,.4,1);
@@ -316,7 +315,7 @@
     }
 
     .top-tool-bar {
-        height: 30px;
+        height: 5px;
         background-color: #ADADAD;
     }
 
@@ -483,6 +482,9 @@
         }
         .bt-close {
             display: none;
+        }
+        .top-tool-bar {
+            height: 30px;
         }
     }
 
