@@ -207,7 +207,7 @@
         display: block;
         height: 5px;
         width: 30%;
-        background-color: aqua;
+        background-color: chartreuse;
         opacity: 1;
         left: 0px;
         transform: rotate(0deg);
