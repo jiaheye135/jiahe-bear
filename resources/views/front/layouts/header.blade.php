@@ -4,7 +4,6 @@
         </div>
     </div>
     <div class="menu-bar">
-        <div class="logo"></div>
         <div class="bt-close icon">
             <span></span>
             <span></span>
@@ -13,6 +12,7 @@
             <span></span>
             <span></span>
         </div>
+        <div class="logo"></div>
         <div class="container">
             <ul class="menu-block">
                 <li class="menu-item">
@@ -332,7 +332,7 @@
         position: absolute;
         width: 250px;
         height: 70px;
-        background: url(basic/logo/original/logo.png) no-repeat;
+        background: url(basic/logo/original-right/logo.png) no-repeat;
         left: 50%;
         margin: 0;
         margin-left: -125px;
@@ -470,6 +470,12 @@
     a {
         display: block;
         text-decoration: none;
+    }
+
+    @media (min-width: 460px) {
+        .logo {
+            background: url(basic/logo/original/logo.png) no-repeat;
+        }
     }
 
     @media (min-width: 768px) {
