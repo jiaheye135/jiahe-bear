@@ -94,6 +94,7 @@
 
 <style>
     html, body {
+        min-width: 320px;
         height: 100%;
     }
 
@@ -173,19 +174,13 @@
     }
 
     .main-body {
+        width: 100%;
         position: absolute;
         left: 0;
         transition: all .4s cubic-bezier(0,.4,.4,1);
         -ms-transition: all .4s cubic-bezier(0,.4,.4,1);
         -moz-transition: all .4s cubic-bezier(0,.4,.4,1);
         -webkit-transition: all .4s cubic-bezier(0,.4,.4,1);
-    }
-
-    .main-content {
-        height: 100%;
-        position: absolute;
-        left: 0%;
-        -webkit-transition: all .4s;
     }
 
     .bt-close {
@@ -305,8 +300,8 @@
     }
 
     .top-header {
-        position: fixed;
-        width: 100%;
+        /* position: fixed; */
+        /* width: 100%; */
     }
     
     .container {
@@ -323,7 +318,7 @@
         position: relative;
         height: 6em;
         background-color: #1e0b00;
-        box-shadow: 0px 7px 8px 5px #cccccc;
+        /* box-shadow: 0px 7px 8px 5px #cccccc; */
         padding: 15px 0;
         white-space: nowrap;
     }
@@ -472,15 +467,226 @@
         text-decoration: none;
     }
 
+    .main-content {
+    }
+
+    .TPA-text, .TPA-official-logo,
+    .official-logo-border-block-left,
+    .official-logo-border-block-right {
+        background-color: #212529;
+    }
+
+    .TPA-text {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .TPA-text img {
+        width: 72%;
+    }
+
+    .index-img {
+        text-align: center;
+        background-color: currentColor;
+        padding-bottom: 10px;
+    }
+
+    .index-img img.TPA-img {
+        width: 100%;
+        box-shadow: 0 0 5px #ff9900, 0 0 25px #ff9900, 0 0 10px #ff9900;
+        border: 5px solid #ff9900;
+        opacity: 0;
+        transition: all 3s cubic-bezier(0,0,1,1);
+        -ms-transition: all 3s cubic-bezier(0,0,1,1);
+        -moz-transition: all 3s cubic-bezier(0,0,1,1);
+        -webkit-transition: all 3s cubic-bezier(0,0,1,1);
+    }
+
+    .TPA-official-logo {
+        text-align: center;
+        position: relative;
+        height: 54px;
+    }
+
+    .official-logo-border {
+        position: absolute;
+        border-bottom: 1px solid black;
+        width: 0;
+        left: 50%;
+        transition: all 1s cubic-bezier(0,0,1,1);
+        -ms-transition: all 1s cubic-bezier(0,0,1,1);
+        -moz-transition: all 1s cubic-bezier(0,0,1,1);
+        -webkit-transition: all 1s cubic-bezier(0,0,1,1);
+    }
+
+    .official-logo-border-triangle-left,
+    .official-logo-border-triangle-right {
+        position: absolute;
+        border-style: solid;
+        border-top-width: 54px;
+        border-bottom-width: 50px;
+        border-color: #d51216;
+    }
+
+    .official-logo-border-triangle-left {
+        left: 0;
+        width: 0;
+        height: 0;
+        border-right-width: 0px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    .official-logo-border-triangle-right {
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-left-width: 0px;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    .triangle-width-auxiliary-line {
+        background-color: blue;
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 1px;
+        top: 493px;
+        opacity: 0;
+    }
+
+    
+    .official-logo-border-block-left,
+    .official-logo-border-block-right {
+        position: absolute;
+        height: 54px;
+        transition: all .5s cubic-bezier(0,0,1,1);
+        -ms-transition: all .5s cubic-bezier(0,0,1,1);
+        -moz-transition: all .5s cubic-bezier(0,0,1,1);
+        -webkit-transition: all 1s cubic-bezier(0,0,1,1);
+    }
+
+    .official-logo-border-block-left {
+        width: 50%;
+        left: 0%;
+    }
+
+    .official-logo-border-block-right {
+        width: 50%;
+        left: 50%;
+    }
+    
+    .official-logo-border-small-triangle-left,
+    .official-logo-border-small-triangle-right {
+        position: absolute;
+        top: 4px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: #212529;
+    }
+
+    .official-logo-border-small-triangle-left {
+        left: 5%;
+        border-width: 50px 0 0 50px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    .official-logo-border-small-triangle-right {
+        right: 5%;
+        border-width: 50px 50px 0 0;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    .official-logo-border-bottom-left,
+    .official-logo-border-bottom-right {
+        position: absolute;
+        height: 54px;
+        top: 54px;
+        background-color: white;
+        transition: all 1.1s cubic-bezier(0,0,1,1);
+        -ms-transition: all 1.1s cubic-bezier(0,0,1,1);
+        -moz-transition: all 1.1s cubic-bezier(0,0,1,1);
+        -webkit-transition: all 1.1s cubic-bezier(0,0,1,1);
+    }
+
+    .official-logo-border-bottom-left {
+        left: 0;
+        width: 50%;
+    }
+
+    .official-logo-border-bottom-right {
+        left: 50%;
+        width: 50%;
+    }
+
+    .TPA-official-logo img.official-img {
+        width: 80px;
+        position: absolute;
+        margin-left: -42px;
+        left: 50%;
+        top: 25px;
+        opacity: 0;
+    }
+
+    @media (min-width: 320px) {
+        html, body {
+            overflow-x: hidden;
+        }
+    }
+
     @media (min-width: 460px) {
         .logo {
             background: url(basic/logo/original/logo.png) no-repeat;
+        }
+        .TPA-official-logo img.official-img {
+            width: 100px;
+            top: 15px;
+        }
+    }
+
+    @media (min-width: 500px) {
+    }
+
+    @media (min-width: 560px) {
+        .TPA-text img {
+            width: auto;
+        }
+    }
+
+    @media (min-width: 680px) {
+    }
+
+    @media (min-width: 735px) {
+        .index-img img.TPA-img {
+            width: auto;
+        }
+        .TPA-official-logo img.official-img {
+            width: 118px;
+            top: 10px;
         }
     }
 
     @media (min-width: 768px) {
     }
 
+    @media (min-width: 860px) {
+    }
+
+    @media (min-width: 1040px) {
+    }
+
+    @media (min-width: 1220px) {
+    }
+
+    /* 手機版分界*/
     @media (min-width: 1130px) {
         .menu-block {
             margin-left: -66px;
@@ -492,12 +698,18 @@
         .top-tool-bar {
             height: 30px;
         }
+        .TPA-official-logo img.official-img {
+            top: 5px;
+        }
     }
 
     @media (min-width: 1200px) {
         .menu-block {
             margin-left: 24px;
         }
+    }
+
+    @media (min-width: 1220px) {
     }
 
     @media (min-width: 1400px) {

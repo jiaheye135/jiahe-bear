@@ -18,6 +18,19 @@
         }
 
         setMobileMenuH(mobileMenuH);
+        // setMainContentTop();
+        setIndexOfficialTriangleW();
+    }
+
+    function setIndexOfficialTriangleW() {
+        let blockW = $('.triangle-width-auxiliary-line').width();
+        $('.official-logo-border-triangle-left').css('border-left-width', blockW);
+        $('.official-logo-border-triangle-right').css('border-right-width', blockW);
+    }
+
+    function setMainContentTop() {
+        let headerH = $('.top-header').height();
+        $('.main-content').css('margin-top', headerH);
     }
 
     function setMobileMenuH(mobileMenuH) {
@@ -30,6 +43,40 @@
         }
     }
 
+    function setTPAText() {
+        $('.TPA-text img').attr('src', '{{ $basicVar['webType'] }}/images/' + tpaTextImgs[tpaTextImgI]);
+        tpaTextImgI++;
+        if (tpaTextImgI > tpaTextImgs.length - 1) {
+            tpaTextImgI = 0;
+            window.clearInterval(tpaTextTimeId);
+            setTimeout(() => {
+                $('.index-img img').css('opacity', 1);
+            }, 300);
+        }
+    }
+
+    function setTPAOfficialAnimation () {
+        if ($('.TPA-official-logo img.official-img').css('opacity') == 0) {
+            $('.TPA-official-logo img.official-img').css('opacity', 1);
+        } else {
+            $('.TPA-official-logo img.official-img').css('opacity', 0)
+        }
+        tpaOfficialImgI++;
+        if (tpaOfficialImgI == 4) {
+            window.clearInterval(tpaOfficialTimeId);
+            setTimeout(() => {
+                $('.TPA-official-logo img.official-img').css('-webkit-transition', 'all 0.5s cubic-bezier(0, 0, 1, 1)');
+                $('.TPA-official-logo img.official-img').css('opacity', 1);
+                setTimeout(() => {
+                    $('.official-logo-border-block-left').css('width', '5%');
+                    $('.official-logo-border-block-right').css('left', '95%');
+                    $('.official-logo-border-bottom-left').css('width', 0);
+                    $('.official-logo-border-bottom-right').css('left', '100%');
+                }, 600);
+            }, 200);
+        }
+    }
+
     /* start ------------------------------------------------------------------- */
     const mobileMenuH = $('.menu-mobile').height();
 
@@ -38,6 +85,16 @@
     resize();
     $(window).resize(resize);
 
+    let tpaTextImgs = ['TPA-text0.png', 'TPA-text1.png', 'TPA-text2.png', 'TPA-text3.png', 'TPA-text4.png'];
+    let tpaTextImgI = 0;
+    let tpaTextTimeId = setInterval(setTPAText, 300);
+
+    let tpaOfficialImgI = 0;
+    let tpaOfficialTimeId = 0;
+    setTimeout(() => {
+        tpaOfficialTimeId = setInterval(setTPAOfficialAnimation, 60);
+    }, 1800);
+    
     // 獲取手機版子選單高度
     let subMenuHList = [];
     $('.sub-menu-block-mobile').each(function () {
@@ -75,6 +132,7 @@
         $('.menu-bar .bt-close').removeClass('open');
         $('.menu-mobile').css('left', '-11em');
         $('.main-body').css('left', 0);
+        $("body").css("overflow-x", "auto");
 
         closeSubMenu($('ul.menu-block-mobile > li'));
     }
@@ -83,8 +141,8 @@
         if ( !$(this).hasClass('open') ) {
             $(this).addClass('open');
             $('.menu-mobile').css('left', 0);
-            $('.main-body').css('left', '11.5em');
-            // $("body").css("overflow", "hidden");
+            $('.main-body').css('left', '11em');
+            $("body").css("overflow-x", "hidden");
         } else {
             closeMenu();
         }
