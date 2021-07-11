@@ -96,6 +96,7 @@
     html, body {
         min-width: 320px;
         height: 100%;
+        overflow-x: hidden;
     }
 
     .menu-mobile {
