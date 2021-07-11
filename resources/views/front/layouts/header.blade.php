@@ -489,6 +489,7 @@
         text-align: center;
         background-color: currentColor;
         padding-bottom: 10px;
+        margin: -1px 0px;
     }
 
     .index-img img.TPA-img {

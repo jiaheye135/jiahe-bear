@@ -70,8 +70,10 @@
                 setTimeout(() => {
                     $('.official-logo-border-block-left').css('width', '5%');
                     $('.official-logo-border-block-right').css('left', '95%');
+                    $('.official-logo-border-block-right').css('width', '5%');
                     $('.official-logo-border-bottom-left').css('width', 0);
                     $('.official-logo-border-bottom-right').css('left', '100%');
+                    $('.official-logo-border-bottom-right').css('width', 0);
                 }, 600);
             }, 200);
         }
