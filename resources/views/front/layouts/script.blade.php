@@ -22,6 +22,21 @@
         setIndexOfficialTriangleW();
     }
 
+    function closeSubMenu (obj) {
+        obj.removeClass('mobile-menu-open');
+        obj.find('.sub-menu-block-mobile').css('margin', 0);
+        obj.find('.sub-menu-block-mobile').css('height', 0);
+    }
+
+    function closeMenu() {
+        $('.menu-bar .bt-close').removeClass('open');
+        $('.menu-mobile').css('left', '-11em');
+        $('.main-body').css('left', 0);
+        $("body").css("overflow-x", "auto");
+
+        closeSubMenu($('ul.menu-block-mobile > li'));
+    }
+
     function setIndexOfficialTriangleW() {
         let blockW = $('.triangle-width-auxiliary-line').width();
         $('.official-logo-border-triangle-left').css('border-left-width', blockW);
@@ -79,23 +94,46 @@
         }
     }
 
+    function doTPAOfficialAnimation() {
+        let animationName = arguments.callee.name;
+        if (animationList[animationName] == 1) return;
+        
+        animationList[animationName] = 1;
+        tpaOfficialTimeId = setInterval(setTPAOfficialAnimation, 60); 
+    }
+
+    function scrollAnimation() {
+        let bottomOfWindow = $(window).scrollTop() + $(window).height();
+
+        // TPA 官方 icon 動畫
+        const bottomOfObject = $('.TPA-official-logo').offset().top + $('.TPA-official-logo').outerHeight();
+        if( bottomOfWindow > bottomOfObject ) {
+            doTPAOfficialAnimation();
+        }
+    }
+
     /* start ------------------------------------------------------------------- */
     const mobileMenuH = $('.menu-mobile').height();
-
     let device = 'pc'; // (pc/mobile)
 
     resize();
     $(window).resize(resize);
+    $(window).scroll(scrollAnimation);
 
+    // 記錄動畫做過狀態
+    let animationList = {
+        'doTPAOfficialAnimation': 0,
+    };
+
+    // TPA 字串動畫
     let tpaTextImgs = ['TPA-text0.png', 'TPA-text1.png', 'TPA-text2.png', 'TPA-text3.png', 'TPA-text4.png'];
     let tpaTextImgI = 0;
     let tpaTextTimeId = setInterval(setTPAText, 300);
 
+    // TPA 官方 icon 動畫初始值
     let tpaOfficialImgI = 0;
     let tpaOfficialTimeId = 0;
-    setTimeout(() => {
-        tpaOfficialTimeId = setInterval(setTPAOfficialAnimation, 60);
-    }, 1800);
+    scrollAnimation();
     
     // 獲取手機版子選單高度
     let subMenuHList = [];
@@ -104,6 +142,7 @@
     });
     $('.sub-menu-block-mobile').height(0);
 
+    // 手機版子選單開關
     $('ul.menu-block-mobile > li').click(function(){
         let index = $('ul.menu-block-mobile > li').index(this);
         if ( !$(this).hasClass('mobile-menu-open') ) {
@@ -116,6 +155,7 @@
         }
     });
 
+    // 電腦版子選單開關
     $('.menu-item').hover(function(){
             $(this).find('ul.sub-menu-block').addClass('open');
         },
@@ -124,21 +164,7 @@
         }
     );
 
-    function closeSubMenu (obj) {
-        obj.removeClass('mobile-menu-open');
-        obj.find('.sub-menu-block-mobile').css('margin', 0);
-        obj.find('.sub-menu-block-mobile').css('height', 0);
-    }
-
-    function closeMenu() {
-        $('.menu-bar .bt-close').removeClass('open');
-        $('.menu-mobile').css('left', '-11em');
-        $('.main-body').css('left', 0);
-        $("body").css("overflow-x", "auto");
-
-        closeSubMenu($('ul.menu-block-mobile > li'));
-    }
-
+    // 漢堡開關
     $('.menu-bar .bt-close').click(function () {
         if ( !$(this).hasClass('open') ) {
             $(this).addClass('open');
