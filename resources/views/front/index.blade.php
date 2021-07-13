@@ -21,4 +21,21 @@
     <span class="triangle-width-auxiliary-line"></span>
 </div>
 
+<div class="video-div">
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SNxkn3xPpps?start=165" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SNxkn3xPpps?start=165" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SNxkn3xPpps?start=165" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
 @endsection

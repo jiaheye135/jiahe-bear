@@ -96,6 +96,7 @@
     html, body {
         min-width: 320px;
         height: 100%;
+        width: 100%;
     }
 
     .menu-mobile {
@@ -525,7 +526,7 @@
         position: absolute;
         border-style: solid;
         border-top-width: 54px;
-        border-bottom-width: 50px;
+        border-bottom-width: 30px;
         border-color: #d51216;
     }
 
@@ -637,6 +638,23 @@
         opacity: 0;
     }
 
+    .video-div {
+        text-align: center;
+        padding-top: 70px;
+        position: relative;
+        width: 100%;
+    }
+
+    .video-div iframe {
+        /* position: absolute;
+        left: 0;
+        width: 100%; */
+    }
+
+    .owl-carousel > div{
+        display: inline-block;
+    }
+
     @media (min-width: 320px) {
         html, body {
             overflow-x: hidden;
@@ -662,6 +680,14 @@
         }
     }
 
+    @media (min-width: 577px) {
+        .video-div iframe {
+            /* position: unset;
+            left: unset;
+            width: 560px; */
+        }
+    }
+
     @media (min-width: 680px) {
     }
 
@@ -672,6 +698,13 @@
         .TPA-official-logo img.official-img {
             width: 118px;
             top: 10px;
+        }
+        .official-logo-border-triangle-left,
+        .official-logo-border-triangle-right {
+            border-bottom-width: 45px;
+        }
+        .video-div {
+            padding-top: 85px;
         }
     }
 
@@ -685,6 +718,10 @@
     }
 
     @media (min-width: 1220px) {
+        .official-logo-border-triangle-left,
+        .official-logo-border-triangle-right {
+            border-bottom-width: 50px;
+        }
     }
 
     /* 手機版分界*/

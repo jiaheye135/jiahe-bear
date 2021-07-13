@@ -31,8 +31,7 @@
     function closeMenu() {
         $('.menu-bar .bt-close').removeClass('open');
         $('.menu-mobile').css('left', '-11em');
-        $('.main-body').css('left', 0);
-        $("body").css("overflow-x", "auto");
+        $('.main-body').css('left', 0).css("position", "absolute");
 
         closeSubMenu($('ul.menu-block-mobile > li'));
     }
@@ -169,10 +168,38 @@
         if ( !$(this).hasClass('open') ) {
             $(this).addClass('open');
             $('.menu-mobile').css('left', 0);
-            $('.main-body').css('left', '11em');
-            $("body").css("overflow-x", "hidden");
+            $('.main-body').css('left', '11em').css("position", "fixed");
         } else {
             closeMenu();
         }
+    });
+
+    let owl = $('.owl-carousel');
+    owl.owlCarousel({
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:2,
+                nav:false
+            },
+            1850:{
+                items:3,
+                nav:true,
+                loop:false
+            }
+        }
+        // items: 3,
+        // itemsDesktop: [1400, 3],
+        // itemsDesktopSmall: [1100, 2],
+        // itemsTablet: [700, 1],
+        // itemsMobile: [500, 1],
+        // loop: true,
+        // autoplay: true,
+        // autoplayTimeout: 3500,
+        // nav: true,
+        // margin: 10,
     });
 </script>
