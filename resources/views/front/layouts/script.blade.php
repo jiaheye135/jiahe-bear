@@ -24,7 +24,7 @@
         let clientW = document.body.clientWidth;
         if (clientW <= 420) {
             $('.video-div iframe').width(clientW);
-            $('.video-div iframe').height(clientW);
+            $('.video-div iframe').height(clientW / 16 * 9);
         }
     }
 
