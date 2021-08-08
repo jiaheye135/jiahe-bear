@@ -25,7 +25,7 @@
     <div class="slider-div">
         <div class="owl-carousel owl-theme">
             <div class="item">
-                <iframe class="carousel-iframe" src="https://www.youtube.com/embed/wgoJmqAng4?wmode=opaque&enablejsapi=1&rel=1" title="YouTube video player" frameborder="0"
+                <iframe class="carousel-iframe" src="https://www.youtube.com/embed/QoUMgQLAa7c?wmode=opaque&enablejsapi=1&rel=1" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="item">
