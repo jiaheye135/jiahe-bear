@@ -20,6 +20,11 @@
         setMobileMenuH(mobileMenuH);
         // setMainContentTop();
         setIndexOfficialTriangleW();
+
+        let clientW = document.body.clientWidth;
+        if (clientW <= 400) {
+            $('.video-div iframe').width(clientW);
+        }
     }
 
     function closeSubMenu (obj) {
