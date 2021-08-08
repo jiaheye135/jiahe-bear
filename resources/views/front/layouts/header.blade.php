@@ -647,8 +647,8 @@
     }
 
     .video-div iframe {
-        width: 320px;
-        height: 181px;
+        width: 419px;
+        height: 235px;
     }
 
     .owl-stage > .active > .item > iframe {

@@ -22,7 +22,7 @@
         setIndexOfficialTriangleW();
 
         let clientW = document.body.clientWidth;
-        if (clientW <= 420) {
+        if (clientW >= 320 && clientW <= 420) {
             $('.video-div iframe').width(clientW);
             $('.video-div iframe').height(clientW / 16 * 9);
         }
@@ -218,10 +218,10 @@
             0: {
                 items: 1
             },
-            700: {
+            960: {
                 items: 2
             },
-            1100: {
+            1400: {
                 items: 3
             },
         },
