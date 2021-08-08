@@ -22,8 +22,7 @@
         setIndexOfficialTriangleW();
 
         let clientW = document.body.clientWidth;
-        alert(clientW);
-        if (clientW <= 400) {
+        if (clientW <= 420) {
             $('.video-div iframe').width(clientW);
         }
     }
