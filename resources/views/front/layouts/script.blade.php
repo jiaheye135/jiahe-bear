@@ -83,11 +83,9 @@
                 $('.TPA-official-logo img.official-img').css('opacity', 1);
                 setTimeout(() => {
                     $('.official-logo-border-block-left').css('width', '5%');
-                    $('.official-logo-border-block-right').css('left', '95%');
-                    $('.official-logo-border-block-right').css('width', '5%');
+                    $('.official-logo-border-block-right').css('left', '95%').css('width', '5%');
                     $('.official-logo-border-bottom-left').css('width', 0);
-                    $('.official-logo-border-bottom-right').css('left', '100%');
-                    $('.official-logo-border-bottom-right').css('width', 0);
+                    $('.official-logo-border-bottom-right').css('left', '100%').css('width', 0);
                 }, 600);
             }, 200);
         }
@@ -174,32 +172,97 @@
         }
     });
 
-    let owl = $('.owl-carousel');
-    owl.owlCarousel({
-        responsive:{
-            0:{
-                items:1,
-                nav:true
-            },
-            600:{
-                items:2,
-                nav:false
-            },
-            1850:{
-                items:3,
-                nav:true,
-                loop:false
+    // YT API
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    let players = [];
+    function onYouTubeIframeAPIReady() {
+        let iframes = $('.carousel-iframe');
+
+        for (let i = 0; i < iframes.length; i++) {
+            players[i] = new YT.Player(iframes[i], {
+                events: {
+                    // 'onReady': onPlayerReady,
+                    'onStateChange': function(e) { onPlayerStateChange(e, i); }
+                }
+            });
+        }
+    }
+
+    function onPlayerStateChange(e, i) {
+        if (e.data == YT.PlayerState.PLAYING) {
+            for (let j = 0; j < players.length; j++) {
+                // players[j].getPlayerState()
+                if (j != i) players[j].pauseVideo();
             }
         }
-        // items: 3,
-        // itemsDesktop: [1400, 3],
-        // itemsDesktopSmall: [1100, 2],
-        // itemsTablet: [700, 1],
-        // itemsMobile: [500, 1],
-        // loop: true,
-        // autoplay: true,
-        // autoplayTimeout: 3500,
-        // nav: true,
-        // margin: 10,
+    }
+
+    // 影片輪播
+    let owl = $('.owl-carousel');
+    owl.owlCarousel({
+        callbacks: true,
+        nav: true,
+        // navText : ["", ""],
+        responsive: {
+            0: {
+                items: 1
+            },
+            700: {
+                items: 2
+            },
+            1100: {
+                items: 3
+            },
+        },
+        afterAction: function() {
+            console.log(1);
+        }
     });
+
+    owl.on('changed.owl.carousel', function(e) {
+        for (let i = 0; i < players.length; i++) {
+            players[i].pauseVideo();
+        }
+    });
+
+    // var player;
+    //   function onYouTubeIframeAPIReady() {
+    //       console.log(1);
+    //     player = new YT.Player('player', {
+    //       height: '320',
+    //       width: '181',
+    //       videoId: 'M7lc1UVf-VE',
+    //       playerVars: {
+    //         'playsinline': 1
+    //       },
+    //       events: {
+    //         'onReady': onPlayerReady,
+    //         'onStateChange': onPlayerStateChange
+    //       }
+    //     });
+    //   }
+
+    //   // 4. The API will call this function when the video player is ready.
+    //   function onPlayerReady(event) {
+    //     event.target.playVideo();
+    //   }
+
+    //   // 5. The API calls this function when the player's state changes.
+    //   //    The function indicates that when playing a video (state=1),
+    //   //    the player should play for six seconds and then stop.
+    //   var done = false;
+    //   function onPlayerStateChange(event) {
+    //     if (event.data == YT.PlayerState.PLAYING && !done) {
+    //       setTimeout(stopVideo, 6000);
+    //       done = true;
+    //     }
+    //   }
+    //   function stopVideo() {
+    //     player.stopVideo();
+    //   }
 </script>

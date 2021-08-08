@@ -508,6 +508,7 @@
         text-align: center;
         position: relative;
         height: 54px;
+        z-index: 1;
     }
 
     .official-logo-border {
@@ -612,7 +613,7 @@
         position: absolute;
         height: 54px;
         top: 54px;
-        background-color: white;
+        background-color: lavender;
         transition: all 1.1s cubic-bezier(0,0,1,1);
         -ms-transition: all 1.1s cubic-bezier(0,0,1,1);
         -moz-transition: all 1.1s cubic-bezier(0,0,1,1);
@@ -640,19 +641,28 @@
 
     .video-div {
         text-align: center;
-        padding-top: 70px;
+        padding-top: 55px;
         position: relative;
-        width: 100%;
+        background-color: lavender;
     }
 
     .video-div iframe {
+        width: 320px;
+        height: 181px;
+    }
+
+    .owl-stage > .active > .item > iframe {
         /* position: absolute;
         left: 0;
         width: 100%; */
     }
 
-    .owl-carousel > div{
-        display: inline-block;
+    .owl-carousel > div {
+        /* display: inline-block; */
+    }
+
+    .slider-div {
+        margin: auto;
     }
 
     @media (min-width: 320px) {
@@ -753,6 +763,9 @@
     @media (min-width: 1400px) {
         .menu-block {
             margin-left: 115px;
+        }
+        .slider-div {
+            width: 1400px;
         }
     }
 </style>

@@ -22,20 +22,31 @@
 </div>
 
 <div class="video-div">
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/SNxkn3xPpps?start=165" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/SNxkn3xPpps?start=165" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/SNxkn3xPpps?start=165" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="slider-div">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <iframe class="carousel-iframe" src="https://www.youtube.com/embed/pI47zdMhX3I?wmode=opaque&enablejsapi=1&rel=1" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="item">
+                <iframe class="carousel-iframe" src="https://www.youtube.com/embed/SNxkn3xPpps?wmode=opaque&enablejsapi=1&rel=1" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="item">
+                <iframe class="carousel-iframe" src="https://www.youtube.com/embed/KjTZ2PcXnkg?wmode=opaque&enablejsapi=1&rel=1" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 </div>
+
+<!-- <div class="owl-carousel owl-theme" id="business_carousel">
+    <div>
+        <div class="video-container">
+            <div class="backdrop"></div>
+            <iframe class="carousel__iframe" src="https://www.youtube.com/embed/1afpD7NCOhw?wmode=opaque&enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div> -->
 
 @endsection
